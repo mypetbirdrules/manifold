@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+import argparse
+
+if __name__=="__main__":
+    
+    parser=argparse.ArgumentParser(description="Communicate with your car")
+
+    parser.add_argument("-l","--list-devices",dest="listDevices",action="store_true",default=False,help="Search for serial devices and list available ones")
+    parser.add_argument("--check-connection",dest="connectionCheck",action="store_true",default=False,help="Check connection to car without performing any action")
+    parser.add_argument("--show-codes",dest="displayDTC",action="store_true",default=False,help="Attempt to fetch diagnostic trouble codes and display them")
+    parser.add_argument("--clear-codes",dest="clearDTC",action="store_true",default=False,help="Clear diagnostic trouble codes (use this to reset a check engine light")
+    parser.add_argument("--status",dest="printStatus",action="store_true",default=False,help="Print basic information about vehicle such as engine RPM, speed, coolant temperature, etc.")
+
+    parser.parse_args()
